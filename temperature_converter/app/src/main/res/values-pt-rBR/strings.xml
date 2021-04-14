@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Conversor de temperatura</string>
+    <string name="calculate">calcular</string>
+    <string name="convert_from">Converter de</string>
+    <string name="convert_to">para</string>
+    <string name="convert_from_question">Converter de?</string>
+    <string name="convert_to_question">Converter para?</string>
+    <string name="max_value">Valor máximo!</string>
+</resources>

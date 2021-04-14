@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_act"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@drawable/app_background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:text="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="@string/convert_from"
+        android:textSize="24sp"
+        android:textStyle="italic|bold"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_temperature" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="@string/convert_to"
+        android:textSize="24sp"
+        android:textStyle="italic|bold"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/input_temperature" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/to_c"
+        style="@style/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/celsius"
+        android:textColor="#555"
+        android:enabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/to_k"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/kelvin"
+        android:textColor="#555"
+        android:enabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/to_f"
+        app:layout_constraintStart_toStartOf="@+id/to_f"
+        app:layout_constraintTop_toBottomOf="@+id/to_f"
+        style="@style/button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/to_f"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/fahrenheit"
+        android:textColor="#555"
+        android:enabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/to_c"
+        app:layout_constraintStart_toStartOf="@+id/to_c"
+        app:layout_constraintTop_toBottomOf="@+id/to_c"
+        style="@style/button" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/convert_temperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mirror_temperature"
+        tools:text="21°C" />
+
+    <TextView
+        android:id="@+id/mirror_temperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        tools:text="21°C" />
+
+    <EditText
+        android:id="@+id/input_temperature"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="numberSigned|numberDecimal"
+        android:textSize="40sp"
+        android:textColor="#252525"
+        tools:text="0.00"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:padding="2dp"
+        android:textColorHint="#AFAFAF"
+        android:background="@drawable/input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/convert_temperature" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/from_c"
+        style="@style/button"
+        android:layout_marginEnd="10dp"
+        android:text="@string/celsius"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/from_f"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/fahrenheit"
+        app:layout_constraintEnd_toEndOf="@+id/from_c"
+        app:layout_constraintStart_toStartOf="@+id/from_c"
+        app:layout_constraintTop_toBottomOf="@+id/from_c"
+        style="@style/button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/calculate"
+        style="@style/button"
+        android:background="@drawable/button_click"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/calculate"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/from_k" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/from_k"
+        style="@style/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/kelvin"
+        app:layout_constraintEnd_toEndOf="@+id/from_f"
+        app:layout_constraintStart_toStartOf="@+id/from_f"
+        app:layout_constraintTop_toBottomOf="@+id/from_f" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Temperature converter</string>
+    <string name="celsius" translatable="false">celsius</string>
+    <string name="fahrenheit" translatable="false">fahrenheit</string>
+    <string name="kelvin" translatable="false">kelvin</string>
+    <string name="calculate">calculate</string>
+    <string name="convert_from">Convert from</string>
+    <string name="convert_to">to</string>
+
+    <string name="convert_from_question">Convert from?</string>
+    <string name="convert_to_question">Convert to?</string>
+    <string name="max_value">Max value!</string>
+</resources>
