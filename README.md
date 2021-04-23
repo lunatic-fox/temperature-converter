@@ -6,7 +6,7 @@
   Assim que for avançando no aprendizado de desenvolvimento de aplicativos para Android estarei melhorando toda a estrutura do código.
 </p>
 <p align="center">
-  Link para a documentação do projeto: <a href="https://joseliojunior.github.io/project003_documentation/index.html">Documentation</a>.
+  Link para a documentação do projeto: <!--<a href="#">--><b>Em atualização!</b><!--</a>-->
 </p>
 <p align="center">
   <b>Tela do aplicativo em uso</b>

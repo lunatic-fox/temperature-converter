@@ -7,4 +7,5 @@
     <string name="convert_from_question">Converter de?</string>
     <string name="convert_to_question">Converter para?</string>
     <string name="max_value">Valor máximo!</string>
+    <string name="no_input">Por favor, digite o valor que deseja converter.</string>
 </resources>

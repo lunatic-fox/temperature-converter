@@ -1,75 +1,89 @@
 package br.com.temperatureconverter
 
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import br.com.temperatureconverter.databinding.ActivityMainBinding
 
 /**
  * Temperature converter project
- * * Last modification: April 14th 2021.
+ * * Last modification: April 23th 2021.
  * @author Josélio de S. C. Júnior
  */
 class MainActivity : AppCompatActivity() {
-    /** viewBinding */
-    private lateinit var b: ActivityMainBinding
+    private lateinit var viewModel: MainViewModel
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        b = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(b.root)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        /** Selector: From this temperature measurement unit. */
-        var from = 0
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        /** Selector: To this temperature measurement unit. */
-        var to = 0
+        initButtons()
+    }
 
-        /** Creates a object from Converter class.*/
-        val c = Converter(
-            cTemp = b.convertTemperature,
-            iTemp = b.inputTemperature,
-            mTemp = b.mirrorTemperature,
-            fromC = b.fromC,
-            fromF = b.fromF,
-            fromK = b.fromK,
-            toC = b.toC,
-            toF = b.toF,
-            toK = b.toK
+    private fun initButtons() {
+        val messages = Messages(
+                fromQuestion = getString(R.string.convert_from_question),
+                toQuestion = getString(R.string.convert_to_question),
+                maxValue = getString(R.string.max_value)
         )
 
-        c.convertToQuestion = getString(R.string.convert_to_question)
-        c.convertFromQuestion = getString(R.string.convert_from_question)
-        c.maxValue = getString(R.string.max_value)
+        fun state () {
+            binding.run {
+                viewModel.currentState(
+                        buttonfc, buttonff, buttonfk,
+                        buttontc, buttontf, buttontk,
+                        mirrorTemp, convertTemp
+                )
+            }
+        }
+        state()
 
-        b.fromC.setOnClickListener {
-            from = 1
-            c.setButtonStateFrom(b.fromC, b.fromF, b.fromK, b.toC, b.toF, b.toK)
-        }
-        b.fromF.setOnClickListener {
-            from = 2
-            c.setButtonStateFrom(b.fromF, b.fromC, b.fromK, b.toF, b.toC, b.toK)
-        }
-        b.fromK.setOnClickListener {
-            from = 3
-            c.setButtonStateFrom(b.fromK, b.fromF, b.fromC, b.toK, b.toF, b.toC)
-        }
 
-        b.toC.setOnClickListener {
-            to = 1
-            c.setButtonStateTo(b.toC, b.toF, b.toK)
-        }
-        b.toF.setOnClickListener {
-            to = 2
-            c.setButtonStateTo(b.toF, b.toK, b.toC)
-        }
-        b.toK.setOnClickListener {
-            to = 3
-            c.setButtonStateTo(b.toK, b.toF, b.toC)
-        }
-
-        b.calculate.setOnClickListener {
-          c.conversion(b.inputTemperature.text.toString(), from, to)
-          from = 0
-          to = 0
+        viewModel.run {
+            binding.run {
+                buttonfc.setOnClickListener {
+                    buttonFromState(R.id.buttonfc)
+                    state()
+                }
+                buttonff.setOnClickListener {
+                    buttonFromState(R.id.buttonff)
+                    state()
+                }
+                buttonfk.setOnClickListener {
+                    buttonFromState(R.id.buttonfk)
+                    state()
+                }
+                buttontc.setOnClickListener {
+                    buttonToState(R.id.buttontc)
+                    state()
+                }
+                buttontf.setOnClickListener {
+                    buttonToState(R.id.buttontf)
+                    state()
+                }
+                buttontk.setOnClickListener {
+                    buttonToState(R.id.buttontk)
+                    state()
+                }
+                calculate.setOnClickListener {
+                    if (inputTemperature.editableText.isNotEmpty()) {
+                        conversionValues(inputTemperature.editableText.toString(), messages)
+                    } else {
+                        conversionValues(null, messages)
+                        Toast.makeText(
+                                this@MainActivity,
+                                getString(R.string.no_input),
+                                Toast.LENGTH_SHORT).show()
+                    }
+                    state()
+                }
+            }
         }
     }
 }

@@ -11,13 +11,14 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
         android:gravity="center"
+        android:text="@string/app_name"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        android:text="@string/app_name"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,30 +26,27 @@
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="@string/convert_from"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="italic|bold"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_temperature" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="@string/convert_to"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="italic|bold"
-        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/input_temperature" />
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttontc"
@@ -56,37 +54,40 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:enabled="false"
         android:text="@string/celsius"
         android:textColor="#555"
-        android:enabled="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttontk"
+        style="@style/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:enabled="false"
         android:text="@string/kelvin"
         android:textColor="#555"
-        android:enabled="false"
         app:layout_constraintEnd_toEndOf="@+id/buttontf"
         app:layout_constraintStart_toStartOf="@+id/buttontf"
-        app:layout_constraintTop_toBottomOf="@+id/buttontf"
-        style="@style/button" />
+        app:layout_constraintTop_toBottomOf="@+id/buttontf" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttontf"
+        style="@style/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:enabled="false"
         android:text="@string/fahrenheit"
         android:textColor="#555"
-        android:enabled="false"
         app:layout_constraintEnd_toEndOf="@+id/buttontc"
         app:layout_constraintStart_toStartOf="@+id/buttontc"
-        app:layout_constraintTop_toBottomOf="@+id/buttontc"
-        style="@style/button" />
+        app:layout_constraintTop_toBottomOf="@+id/buttontc" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -95,29 +96,36 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
     <TextView
         android:id="@+id/convert_temp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="50sp"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="@+id/mirror_temp"
         app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/mirror_temp"
         app:layout_constraintTop_toBottomOf="@+id/mirror_temp"
         tools:text="21°C" />
 
     <TextView
         android:id="@+id/mirror_temp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/title"
         app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/title"
         app:layout_constraintTop_toBottomOf="@+id/title"
         tools:text="21°C" />
 
@@ -126,52 +134,55 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:background="@drawable/input"
         android:ems="10"
         android:inputType="numberSigned|numberDecimal"
-        android:textSize="40sp"
-        android:textColor="#252525"
         android:maxLength="8"
-        tools:text="0.00"
-        android:textStyle="bold"
-        android:textAlignment="center"
         android:padding="2dp"
+        android:textAlignment="center"
+        android:textColor="#252525"
         android:textColorHint="#AFAFAF"
-        android:background="@drawable/input"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/convert_temp" />
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/convert_temp"
+        app:layout_constraintStart_toStartOf="@+id/convert_temp"
+        app:layout_constraintTop_toBottomOf="@+id/convert_temp"
+        tools:text="0.00" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonfc"
         style="@style/button"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:text="@string/celsius"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonff"
+        style="@style/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="@string/fahrenheit"
         app:layout_constraintEnd_toEndOf="@+id/buttonfc"
         app:layout_constraintStart_toStartOf="@+id/buttonfc"
-        app:layout_constraintTop_toBottomOf="@+id/buttonfc"
-        style="@style/button" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonfc" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/calculate"
         style="@style/button"
-        android:background="@drawable/button_click"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:background="@drawable/button_click"
         android:text="@string/calculate"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/buttonfk"
         app:layout_constraintTop_toBottomOf="@+id/buttonfk" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -179,8 +190,10 @@
         style="@style/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="@string/kelvin"
         app:layout_constraintEnd_toEndOf="@+id/buttonff"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/buttonff"
         app:layout_constraintTop_toBottomOf="@+id/buttonff" />
 
