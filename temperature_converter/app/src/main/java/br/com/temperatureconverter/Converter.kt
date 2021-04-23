@@ -45,22 +45,34 @@ class Converter {
                 when (from) {
                     R.id.buttonfc -> {
                         when (to) {
-                            R.id.buttontf -> {temperatureUnit(((v * 9f) / 5f) + 32f, to)}
-                            R.id.buttontk -> {temperatureUnit(v + K, to)}
+                            R.id.buttontf -> {
+                                temperatureUnit(((v * 9f) / 5f) + 32f, to)
+                            }
+                            R.id.buttontk -> {
+                                temperatureUnit(v + K, to)
+                            }
                             else -> { msg.toQuestion }
                         }
                     }
                     R.id.buttonff -> {
                         when (to) {
-                            R.id.buttontc -> {temperatureUnit(((v - 32f) * 5f) / 9f, to)}
-                            R.id.buttontk -> {temperatureUnit((((v - 32f) * 5f) / 9f) + K, to)}
+                            R.id.buttontc -> {
+                                temperatureUnit(((v - 32f) * 5f) / 9f, to)
+                            }
+                            R.id.buttontk -> {
+                                temperatureUnit((((v - 32f) * 5f) / 9f) + K, to)
+                            }
                             else -> { msg.toQuestion }
                         }
                     }
                     R.id.buttonfk -> {
                         when (to) {
-                            R.id.buttontc -> {temperatureUnit(v - K, to)}
-                            R.id.buttontf -> {temperatureUnit((((v - K) * 9f) / 5) + 32, to)}
+                            R.id.buttontc -> {
+                                temperatureUnit(v - K, to)
+                            }
+                            R.id.buttontf -> {
+                                temperatureUnit((((v - K) * 9f) / 5f) + 32f, to)
+                            }
                             else -> { msg.toQuestion }
                         }
                     }
