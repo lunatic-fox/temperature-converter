@@ -1,15 +1,19 @@
+<p align="center">
+  <img src="https://badges.pufler.dev/created/joseliojunior/project003_temperature_converter">
+  <img src="https://badges.pufler.dev/updated/joseliojunior/project003_temperature_converter">
+</p>
 <h1 align="center">
-  Projeto  003 - Conversor de temperatura
+  Project 003 - Temperature converter
 </h1>
 <p align="center">
-  Este é um projeto simples para treinamento de alguns conceitos de Kotlin.
-  Assim que for avançando no aprendizado de desenvolvimento de aplicativos para Android estarei melhorando toda a estrutura do código.
+  This is a simple project for practice of some Kotlin concepts. 
+  While I'm going further in application development learning I'll be upgrading all code structure.
 </p>
 <p align="center">
-  Link para a documentação do projeto: <!--<a href="#">--><b>Em atualização!</b><!--</a>-->
+  Link for project documentation: <b>Sorry, I'm still working on it!</b>
 </p>
 <p align="center">
-  <b>Tela do aplicativo em uso</b>
+  <b>Application screen in use</b>
 </p>
 <p align="center">
   <img src="appScreenshot.png" width="300px">
