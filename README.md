@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://badges.pufler.dev/created/joseliojunior/project003_temperature_converter">
-  <img src="https://badges.pufler.dev/updated/joseliojunior/project003_temperature_converter">
+  <img src="https://badges.pufler.dev/created/joseliojunior/temperature-converter">
+  <img src="https://badges.pufler.dev/updated/joseliojunior/temperature-converter">
 </p>
 <h1 align="center">
   Project 003 - Temperature converter
